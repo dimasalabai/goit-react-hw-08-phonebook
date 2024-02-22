@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/554.fd585800.chunk.css","mappings":"AAAA,4BACE,aAAc,CACd,oBAAqB,CACrB,yBACF,CAEA,kCACE,aACF","sources":["pages/NotFoundPage/not-found-page.module.css"],"sourcesContent":[".link {\n  color: inherit;\n  text-decoration: none;\n  transition: color 0.3s ease;\n}\n\n.link:hover {\n  color: #cecece;\n}\n"],"names":[],"sourceRoot":""}
