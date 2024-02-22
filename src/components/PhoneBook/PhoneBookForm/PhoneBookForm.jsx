@@ -9,7 +9,7 @@ import styles from './phone-book-form.module.css';
 
 const INITIAL_STATE = {
   name: '',
-  phone: '',
+  number: '',
 };
 
 const PhoneBookForm = () => {
@@ -49,7 +49,7 @@ const PhoneBookForm = () => {
   const contactsName = useMemo(() => nanoid(), []);
   const contactsPhone = useMemo(() => nanoid(), []);
 
-  const { name, phone } = state;
+  const { name, number } = state;
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
@@ -69,11 +69,11 @@ const PhoneBookForm = () => {
       <div className={styles.formGroup}>
         <label htmlFor={contactsPhone}>Number</label>
         <input
-          value={phone}
+          value={number}
           onChange={handleChange}
           id={contactsPhone}
           type="tel"
-          name="phone"
+          name="number"
           required
           placeholder="Phone"
           className={styles.formInput}

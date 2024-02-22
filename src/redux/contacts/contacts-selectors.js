@@ -9,9 +9,9 @@ export const selectFilteredContacts = store => {
   }
   const normalizedFilter = filter.toLowerCase();
 
-  const filteredContacts = items.filter(({ name, phone }) => {
+  const filteredContacts = items.filter(({ name, number }) => {
     const normalizedName = name.toLowerCase();
-    const normalizedPhone = phone.toLowerCase();
+    const normalizedPhone = number.toLowerCase();
 
     return (
       normalizedName.includes(normalizedFilter) ||

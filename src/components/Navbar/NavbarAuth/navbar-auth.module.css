@@ -1,0 +1,20 @@
+.block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: aliceblue;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 18px;
+  color: inherit;
+}
+.link:hover {
+  color: #f6b17a;
+}
+
+.link:global(.active) {
+  color: #f6b17a;
+  font-weight: bold;
+}

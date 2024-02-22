@@ -25,14 +25,14 @@ export const addContact = createAsyncThunk(
     }
   },
   {
-    condition: ({ name, phone }, { getState }) => {
+    condition: ({ name, number }, { getState }) => {
       const { contacts } = getState();
       const normalizedName = name.toLowerCase();
-      const normalizedPhone = phone.toLowerCase();
+      const normalizedPhone = number.toLowerCase();
 
       const dublicate = contacts.items.find(item => {
         const normalizedCurrentName = item.name.toLowerCase();
-        const normalizedCurrentPhone = item.phone.toLowerCase();
+        const normalizedCurrentPhone = item.number.toLowerCase();
 
         return (
           normalizedCurrentName === normalizedName ||
@@ -43,7 +43,7 @@ export const addContact = createAsyncThunk(
       if (dublicate) {
         alert(
           `Contact with this ${
-            name || phone
+            name || number
           } already in contacts book.\nCheck the entered data`
         );
         return false;
@@ -63,44 +63,3 @@ export const deleteContact = createAsyncThunk(
     }
   }
 );
-
-// export const fetchContacts = () => {
-//   const func = async dispatch => {
-//     try {
-//       dispatch(fetchContactsLoading());
-//       const data = await contactsApi.requestFetchContacts();
-//       dispatch(fetchContactsSuccess(data));
-//     } catch (error) {
-//       dispatch(fetchContactsError(error.message));
-//     }
-//   };
-
-//   return func;
-// };
-
-// export const addContact = body => {
-//   const func = async dispatch => {
-//     try {
-//       dispatch(addContactLoading());
-//       const data = await contactsApi.requestAddContacts(body);
-//       dispatch(addContactSuccess(data));
-//     } catch (error) {
-//       dispatch(addContactError(error.message));
-//     }
-//   };
-//   return func;
-// };
-
-// export const deleteContact = id => {
-//   const func = async dispatch => {
-//     try {
-//       dispatch(deleteContactLoading());
-//       await contactsApi.requestDeleteContact(id);
-//       dispatch(deleteContactSuccess(id));
-//     } catch (error) {
-//       dispatch(deleteContactError(error.message));
-//     }
-//   };
-
-//   return func;
-// };

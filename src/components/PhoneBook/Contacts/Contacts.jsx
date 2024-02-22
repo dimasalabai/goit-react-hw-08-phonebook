@@ -24,10 +24,10 @@ const Contacts = () => {
     dispatch(deleteContact(id));
   };
 
-  const contactsItems = items.map(({ id, name, phone }) => {
+  const contactsItems = items.map(({ id, name, number }) => {
     return (
       <li key={id}>
-        {name}: {phone}
+        {name}: {number}
         <button onClick={() => onDeleteСontact(id)} type="button">
           Delete
         </button>
