@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 
 import Loader from '../../shared/components/Loader/Loader';
 import RegisterForm from 'components/RegisterForm/RegisterForm';
@@ -9,7 +8,6 @@ import { signup } from '../../redux/auth/auth-operations';
 import {
   // selectAuthError,
   selectAuthLoading,
-  selectIsLogin,
 } from '../../redux/auth/auth-selectors';
 
 import { ToastContainer } from 'react-toastify';
